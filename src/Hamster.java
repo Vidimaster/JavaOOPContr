@@ -5,8 +5,8 @@ public class Hamster extends Pets{
 
     public Hamster(String name, String dateOfBirth, List<String> commands) {
         super(name, dateOfBirth, commands);
-        counter = counter + 1;
-        counterPets = counterPets + 1;
+        counter = Counter.AddCounter(counter);
+        counterPets = Counter.AddCounter(counterPets);
     }
 
     public static int getCounter() {

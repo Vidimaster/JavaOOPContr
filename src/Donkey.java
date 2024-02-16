@@ -6,8 +6,8 @@ public class Donkey extends PackAnimals{
 
     public Donkey(String name, String dateOfBirth, List<String> commands) {
         super(name, dateOfBirth, commands);
-        counterPackAnimals = counterPackAnimals + 1;
-        counter = counter + 1;
+        counterPackAnimals = Counter.AddCounter(counterPackAnimals);
+        counter = Counter.AddCounter(counter);
     }
 
     public static int getCounter() {

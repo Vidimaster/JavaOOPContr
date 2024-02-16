@@ -5,11 +5,12 @@ public class Cat extends Pets{
 
     public Cat(String name, String dateOfBirth, List<String> commands) {
         super(name, dateOfBirth, commands);
-        counter = counter + 1;
-        counterPets = counterPets + 1;
+        counterPets = Counter.AddCounter(counterPets);
+        counter = Counter.AddCounter(counter);
     }
 
     public static int getCounter() {
         return counter;
     }
+
 }

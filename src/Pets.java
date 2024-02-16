@@ -14,4 +14,10 @@ public class Pets extends Animal{
     }
 
 
+    @Override
+    public void close() throws Exception {
+        if ((Dog.getCounter() + Cat.getCounter() + Hamster.getCounter()) != counterPets) {
+            throw new Exception("Counter was used outside of Try-with-resources");
+        }
+    }
 }

@@ -1,4 +1,6 @@
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.Map;
 
@@ -21,7 +23,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<PackAnimals> multiTypeList1 = new ArrayList<>();
@@ -37,13 +39,15 @@ public class Main {
 
         multiTypeList1.add(new Camel("John the Camel", "13.02.2024", map.get("Camel")));
         multiTypeList1.add(new Camel("Burro", "13.02.2021", map.get("Camel")));
-        multiTypeList1.add(new Horse("Storm", "13.02.2020", map.get("Horse")));
-        multiTypeList1.add(new Donkey("Don", "13.02.2020", map.get("Donkey")));
+        multiTypeList1.add(new Horse("Storm", "05.02.2020", map.get("Horse")));
+        multiTypeList1.add(new Donkey("Don", "08.01.2020", map.get("Donkey")));
         multiTypeList1.add(new Camel("Dune", "13.02.2022", map.get("Camel")));
-        multiTypeList2.add(new Dog("Paul", "13.02.2019", map.get("Dog")));
-        multiTypeList2.add(new Cat("Skimmy", "13.02.2021", map.get("Cat")));
-        multiTypeList2.add(new Dog("Bob", "13.02.2023", map.get("Dog")));
+        multiTypeList2.add(new Dog("Paul", "11.02.2019", map.get("Dog")));
+        multiTypeList2.add(new Cat("Skimmy", "05.02.2021", map.get("Cat")));
+        multiTypeList2.add(new Dog("Bob", "12.02.2023", map.get("Dog")));
         multiTypeList2.add(new Hamster("Hammy", "13.02.2021", map.get("Hamster")));
+
+
 
         boolean menu = true;
         List<Animal> list;
@@ -75,50 +79,70 @@ public class Main {
 
                     line = scanner.nextLine().toUpperCase();
 
+                    //Pets.counterPets += 1; --This throws exception for counter outside try-catch
+
                     String line_name = "";
                     String line_dob = "";
                     switch (line) {
                         case "1":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList2.add(new Cat(line_name, line_dob, map.get("Cat")));
+                            try (Cat objnew = new Cat(line_name, line_dob, map.get("Cat"))) {
+                                multiTypeList2.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         case "2":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList2.add(new Dog(line_name, line_dob, map.get("Dog")));
+                            try (Dog objnew = new Dog(line_name, line_dob, map.get("Dog"))) {
+                                multiTypeList2.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         case "3":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList2.add(new Hamster(line_name, line_dob, map.get("Hamster")));
+                            try (Hamster objnew = new Hamster(line_name, line_dob, map.get("Hamster"))) {
+                                multiTypeList2.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         case "4":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList1.add(new Horse(line_name, line_dob, map.get("Horse")));
+                            try (Horse objnew = new Horse(line_name, line_dob, map.get("Horse"))) {
+                                multiTypeList1.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         case "5":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList1.add(new Donkey(line_name, line_dob, map.get("Donkey")));
+                            try (Donkey objnew = new Donkey(line_name, line_dob, map.get("Donkey"))) {
+                                multiTypeList1.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         case "6":
                             System.out.println("Enter pet's name");
                             line_name = scanner.nextLine();
-                            System.out.println("Enter pet's date of birth");
+                            System.out.println("Enter pet's date of birth dd.mm.yyyy");
                             line_dob = scanner.nextLine();
-                            multiTypeList1.add(new Camel(line_name, line_dob, map.get("Camel")));
+                            try (Camel objnew = new Camel(line_name, line_dob, map.get("Camel"))) {
+                                multiTypeList1.add(objnew);
+                                System.out.println(line_name + " was added to animal list.");
+                            }
                             break;
                         default:
                             System.out.println("No such class");

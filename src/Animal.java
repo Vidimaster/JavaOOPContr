@@ -1,8 +1,9 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
-abstract class Animal {
+abstract class Animal  implements AutoCloseable{
+    private static final SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
     protected String name;
     protected String DateOfBirth;
 
@@ -31,8 +32,6 @@ abstract class Animal {
         return Commands;
     }
 
-
-
     @Override
     public String toString() {
         String ClassType = String.valueOf(getClass());
@@ -42,13 +41,25 @@ abstract class Animal {
 
     static class Sortbyname implements Comparator<Animal> {
 
+        Date date = formatter.parse("12.02.2023");
 
-        // Sorting
+        Sortbyname() throws ParseException {
+        }
+
+
         public int compare(Animal a,Animal b)
         {
-            return a.DateOfBirth.compareTo(b.DateOfBirth);
+
+            try {
+                return formatter.parse(a.DateOfBirth).compareTo(formatter.parse(b.DateOfBirth));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
+
+
 
 }
 

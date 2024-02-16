@@ -7,10 +7,14 @@ public class PackAnimals extends Animal{
 
     }
 
-
     public static int getCounterPackAnimals() {
         return counterPackAnimals;
     }
 
-
+    @Override
+    public void close() throws Exception {
+        if ((Donkey.getCounter() + Camel.getCounter() + Horse.getCounter()) != getCounterPackAnimals()) {
+            throw new Exception("Counter was used outside of Try-with-resources");
+        }
+    }
 }

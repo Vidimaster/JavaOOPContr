@@ -5,8 +5,8 @@ public class Horse extends PackAnimals{
 
     public Horse(String name, String dateOfBirth, List<String> commands) {
         super(name, dateOfBirth, commands);
-        counterPackAnimals = counterPackAnimals + 1;
-        counter = counter + 1;
+        counterPackAnimals = Counter.AddCounter(counterPackAnimals);
+        counter = Counter.AddCounter(counter);
 
     }
 
