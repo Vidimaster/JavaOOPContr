@@ -41,11 +41,6 @@ abstract class Animal  implements AutoCloseable{
 
     static class Sortbyname implements Comparator<Animal> {
 
-        Date date = formatter.parse("12.02.2023");
-
-        Sortbyname() throws ParseException {
-        }
-
 
         public int compare(Animal a,Animal b)
         {
@@ -58,7 +53,6 @@ abstract class Animal  implements AutoCloseable{
 
         }
     }
-
 
 
 }
