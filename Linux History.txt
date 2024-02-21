@@ -1,0 +1,36 @@
+  138  cat > Pets.txt
+  139  cat > "Pack animals.txt"
+  140  cat Pets.txt "Pack animals.txt" > file1
+  141  cat file1
+  142  mv file1 "Human Friends.txt"
+  143  ls
+  144  cat "Human Friens.txt"
+  145  cat "Human Friends.txt"
+  146  mkdir newfolder
+  147  mv Human\ Friends.txt  newfolder
+  148  ls
+  149  cd newfolder
+  150  ls
+  151  sudo apt update
+  152  sudo apt install mysql-server
+  153  sudo systemctl start mysql.service
+  154  sudo mysql
+  155  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
+  156  sudo mysql
+  157  sudo su
+  158  mysql -u root -p
+  159  sudo dpkg -i mc_4.6.3~svn49-1_i386.deb
+  160  sudo dpkg --get-selections
+  161  sudo dpkg -i zip.deb
+  162  sudo dpkg -i zip
+  163  sudo dpkg -l
+  164  sudo dpkg -l zip
+  165  sudo dpkg -i zip
+  166  sudo dpkg -i zip.deb
+  167  sudo dpkg -s zip
+  168  sudo dpkg -r zip
+  169  sudo dpkg -r zip -f
+  170  sudo apt-get remove zip
+  171  sudo dpkg -i zip.deb
+  172  sudo dpkg -s zip
+  173  history
